@@ -354,7 +354,7 @@ class NicknameScreenState extends State<NicknameScreen> {
             onPressed: () async {
               FirebaseAnalytics().logEvent(name: 'set_language_button');
               List languages = await flutterTts.getLanguages;
-              showDialog(context: context, child: SimpleDialog(
+              showDialog(context: context, builder: (context) => SimpleDialog(
                 children: languages.map((e) => ListTile(
                   title: Text(e),
                   onTap: (){
